@@ -1,6 +1,3 @@
-Uitstekend! Hier is de volledige en nette versie van jouw `README.md`, volledig in markdown-formaat:
-
-````markdown
 # 🎮 Vacation Violation
 
 A game developed as part of a study project at Utrecht University.
