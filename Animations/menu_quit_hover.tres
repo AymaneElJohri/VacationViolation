@@ -1,0 +1,26 @@
+[gd_resource type="AnimatedTexture" load_steps=8 format=3 uid="uid://d2ny60spjqslq"]
+
+[ext_resource type="Texture2D" uid="uid://ccgt0rbla82jv" path="res://Sprites/Player/die/adventurer-die-00.png" id="1_ov7yb"]
+[ext_resource type="Texture2D" uid="uid://bkh7wb2s30s6f" path="res://Sprites/Player/die/adventurer-die-01.png" id="2_wydp6"]
+[ext_resource type="Texture2D" uid="uid://dvb78jysk63kw" path="res://Sprites/Player/die/adventurer-die-02.png" id="3_y5317"]
+[ext_resource type="Texture2D" uid="uid://cgjflmtpyhfxc" path="res://Sprites/Player/die/adventurer-die-03.png" id="4_stnt1"]
+[ext_resource type="Texture2D" uid="uid://6i65xmg6xnye" path="res://Sprites/Player/die/adventurer-die-04.png" id="5_kewpf"]
+[ext_resource type="Texture2D" uid="uid://b3n8qur001evi" path="res://Sprites/Player/die/adventurer-die-05.png" id="6_a0o8t"]
+[ext_resource type="Texture2D" uid="uid://8bb1x03plpdo" path="res://Sprites/Player/die/adventurer-die-06.png" id="7_lhkf1"]
+
+[resource]
+frames = 7
+frame_0/texture = ExtResource("1_ov7yb")
+frame_0/duration = 0.12
+frame_1/texture = ExtResource("2_wydp6")
+frame_1/duration = 0.12
+frame_2/texture = ExtResource("3_y5317")
+frame_2/duration = 0.12
+frame_3/texture = ExtResource("4_stnt1")
+frame_3/duration = 0.12
+frame_4/texture = ExtResource("5_kewpf")
+frame_4/duration = 0.12
+frame_5/texture = ExtResource("6_a0o8t")
+frame_5/duration = 0.12
+frame_6/texture = ExtResource("7_lhkf1")
+frame_6/duration = 0.12

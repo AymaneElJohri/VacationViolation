@@ -1,0 +1,17 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://dld75avg5j2km"]
+
+[ext_resource type="Texture2D" uid="uid://c8ikw1vofsov8" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-00.png" id="1_3ot7r"]
+[ext_resource type="Texture2D" uid="uid://mqa4txcmlif3" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-01.png" id="2_ha44s"]
+[ext_resource type="Texture2D" uid="uid://dt2fqtp37ou28" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-02.png" id="3_o55fh"]
+[ext_resource type="Texture2D" uid="uid://ddrdbrmm7xwuv" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-03.png" id="4_06p4n"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_3ot7r")
+frame_0/duration = 0.12
+frame_1/texture = ExtResource("2_ha44s")
+frame_1/duration = 0.12
+frame_2/texture = ExtResource("3_o55fh")
+frame_2/duration = 0.12
+frame_3/texture = ExtResource("4_06p4n")
+frame_3/duration = 0.12
