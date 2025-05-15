@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2cyhhe6gf01y"]
+
+[ext_resource type="FontFile" uid="uid://d1w66uep24xn8" path="res://Fonts/prstartk.ttf" id="1_w5st1"]
+[ext_resource type="Script" path="res://Scripts/Menus/DeathMenu.cs" id="2_axf33"]
+
+
+[sub_resource type="Theme" id="Theme_whdx0"]
+default_font = ExtResource("1_w5st1")
+default_font_size = 36
+
+[node name="DeathMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_whdx0")
+script = ExtResource("2_axf33")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.25098, 0.25098, 0.705882)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -166.0
+offset_right = 350.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 20
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 72
+text = "You Died!!"
+
+[node name="RestartButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="QuitMainButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit to main menu
+"
+
+[node name="QuitDesktopButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit to desktop
+"
+
+[connection signal="pressed" from="GridContainer/RestartButton" to="." method="OnRestartButtonPressed"]
+[connection signal="pressed" from="GridContainer/QuitMainButton" to="." method="OnQuitMainButtonPressed"]
+[connection signal="pressed" from="GridContainer/QuitDesktopButton" to="." method="OnQuitDesktopButtonPressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf7mmlcyubke2"]
+
+[ext_resource type="Script" path="res://Scripts/Items/ItemPickup.cs" id="1_l4cw7"]
+[ext_resource type="AudioStream" uid="uid://de34ynpt35bnm" path="res://Audio/Items/item_pickup.wav" id="2_d5udu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wn607"]
+
+[node name="ItemPickup" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 33
+velocity = Vector2(0, 10502.3)
+script = ExtResource("1_l4cw7")
+
+[node name="MainCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_wn607")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -10)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wn607")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -10)
+stream = ExtResource("2_d5udu")
+bus = &"Sound Effects"

@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bli62pu2fovst"]
+
+[ext_resource type="Theme" uid="uid://xc4cysix24me" path="res://Themes/PixelArtTheme.tres" id="1_8e3ce"]
+[ext_resource type="Script" path="res://Scripts/Menus/PauseMenu.cs" id="2_4xds4"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8e3ce")
+script = ExtResource("2_4xds4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.25098, 0.25098, 0.705882)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -166.0
+offset_right = 350.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 20
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 72
+text = "Paused"
+
+[node name="ResumeButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume game"
+
+[node name="SettingsButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings
+"
+
+[node name="QuitMainButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit to main menu
+"
+
+[node name="QuitDesktopButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(700, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit to desktop
+"
+
+[connection signal="pressed" from="GridContainer/ResumeButton" to="." method="OnResumeButtonPressed"]
+[connection signal="pressed" from="GridContainer/SettingsButton" to="." method="OnSettingsButtonPressed"]
+[connection signal="pressed" from="GridContainer/QuitMainButton" to="." method="OnQuitMainButtonPressed"]
+[connection signal="pressed" from="GridContainer/QuitDesktopButton" to="." method="OnQuitDesktopButtonPressed"]

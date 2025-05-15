@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgg5qvf7qb5cl"]
+
+[ext_resource type="Theme" uid="uid://xc4cysix24me" path="res://Themes/PixelArtTheme.tres" id="1_4w2sk"]
+[ext_resource type="Script" path="res://Scripts/Menus/Inventory/Inventory.cs" id="1_j8nms"]
+[ext_resource type="Texture2D" uid="uid://bycfgatq83ge1" path="res://Sprites/Icons/InventorySlots.png" id="1_kiecd"]
+[ext_resource type="Script" path="res://Scripts/Menus/Inventory/InventoryUI.cs" id="2_b8ogt"]
+[ext_resource type="Resource" uid="uid://b75qdugiav1ln" path="res://Resources/Inventory/PlayerInventory.tres" id="3_5evxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8y4q"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_kiecd")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="Inventory" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4w2sk")
+script = ExtResource("1_j8nms")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.25098, 0.25098, 0.705882)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y8y4q")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("2_b8ogt")
+Data = ExtResource("3_5evxj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.5
+offset_top = 98.0
+offset_right = 126.5
+offset_bottom = 197.0
+grow_horizontal = 2
+
+[node name="Header" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 72
+text = "Inventory
+"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -99.0
+offset_right = 324.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 100
+
+[node name="Description" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "A single brons coin worth 1 coins
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="UseLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -65.0
+offset_right = 78.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "To use the item press E"
+horizontal_alignment = 1
+vertical_alignment = 1

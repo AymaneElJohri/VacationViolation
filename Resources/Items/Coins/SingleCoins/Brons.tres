@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c5wox1d27ia36"]
+
+[ext_resource type="Texture2D" uid="uid://sjoirmdgl3gr" path="res://Sprites/Icons/Coins/SingleBronsCoin.png" id="1_y75cs"]
+[ext_resource type="Script" path="res://Scripts/Items/ItemData.cs" id="2_yii6s"]
+
+[resource]
+script = ExtResource("2_yii6s")
+Name = "Single brons coin"
+Description = "A single brons coin worth 1 coin"
+Worth = 1
+NeedsToBeSold = false
+Texture = ExtResource("1_y75cs")
+effects = null

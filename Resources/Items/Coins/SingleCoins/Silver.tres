@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b6xmp5ga6ju7h"]
+
+[ext_resource type="Texture2D" uid="uid://bb4peyksu8n05" path="res://Sprites/Icons/Coins/SingleSilverCoin.png" id="1_mneig"]
+[ext_resource type="Script" path="res://Scripts/Items/ItemData.cs" id="2_s0rou"]
+
+[resource]
+script = ExtResource("2_s0rou")
+Name = "Single silver coin"
+Description = "A single silver coin worth 5 coins"
+Worth = 5
+NeedsToBeSold = false
+Texture = ExtResource("1_mneig")
+effects = null

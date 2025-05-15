@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=3 uid="uid://chkbr3neiqjkk"]
+
+[ext_resource type="PackedScene" uid="uid://jqu3d6citkkj" path="res://Scenes/Worlds/World0/Level Lars.tscn" id="1_jp6t1"]
+[ext_resource type="Script" path="res://Scripts/Menus/MenuManager.cs" id="2_kppar"]
+[ext_resource type="PackedScene" uid="uid://b2cyhhe6gf01y" path="res://Scenes/Menus/DeathMenu.tscn" id="2_tmu3i"]
+[ext_resource type="Texture2D" uid="uid://dgsn050yn3o2h" path="res://Sprites/Icons/heart-small.png" id="2_wynd1"]
+[ext_resource type="PackedScene" uid="uid://bli62pu2fovst" path="res://Scenes/Menus/PauseMenu.tscn" id="3_ovsfh"]
+[ext_resource type="PackedScene" uid="uid://bov1ru1y1sjt7" path="res://Scenes/Menus/FpsCounter.tscn" id="4_qnph1"]
+[ext_resource type="PackedScene" uid="uid://bbgyxw6w7imeh" path="res://Scenes/Menus/SettingsMenu.tscn" id="4_yk3pf"]
+[ext_resource type="PackedScene" uid="uid://cgg5qvf7qb5cl" path="res://Scenes/Menus/Inventory/Inventory.tscn" id="5_on5nv"]
+[ext_resource type="Texture2D" uid="uid://cr7ledqgdc4u5" path="res://Sprites/Icons/Coins/SingleGoldCoin.png" id="7_sxlw6"]
+[ext_resource type="Script" path="res://Scripts/DebugLevelSwitch.cs" id="8_ppt8x"]
+
+[node name="Gameplay" type="Node2D" groups=["Gameplay"]]
+
+[node name="LevelHolder" type="Node2D" parent="."]
+
+[node name="LevelLars" parent="LevelHolder" instance=ExtResource("1_jp6t1")]
+
+[node name="HUD" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kppar")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HUD"]
+
+[node name="PauseMenu" parent="HUD/CanvasLayer" instance=ExtResource("3_ovsfh")]
+
+[node name="DeathMenu" parent="HUD/CanvasLayer" instance=ExtResource("2_tmu3i")]
+
+[node name="SettingsMenu" parent="HUD/CanvasLayer" instance=ExtResource("4_yk3pf")]
+visible = false
+
+[node name="Inventory" parent="HUD/CanvasLayer" instance=ExtResource("5_on5nv")]
+visible = false
+
+[node name="IconsPlayer1" type="MarginContainer" parent="HUD/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/CanvasLayer/IconsPlayer1"]
+layout_mode = 2
+
+[node name="Hearts" type="GridContainer" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Heart1" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Heart2" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Heart3" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Heart4" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Spacer" type="Control" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Coins" type="GridContainer" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Coin" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Coins"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_sxlw6")
+expand_mode = 2
+
+[node name="CoinCount" type="Label" parent="HUD/CanvasLayer/IconsPlayer1/VBoxContainer/Coins"]
+layout_mode = 2
+text = "0"
+
+[node name="DebugLevelSwitch" type="MarginContainer" parent="HUD/CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.5
+offset_right = 62.0
+offset_bottom = 50.5
+grow_vertical = 2
+script = ExtResource("8_ppt8x")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HUD/CanvasLayer/DebugLevelSwitch"]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="HUD/CanvasLayer/DebugLevelSwitch/HBoxContainer"]
+layout_mode = 2
+text = "Level 0"
+
+[node name="Button2" type="Button" parent="HUD/CanvasLayer/DebugLevelSwitch/HBoxContainer"]
+layout_mode = 2
+text = "Level 1
+"
+
+[node name="Button3" type="Button" parent="HUD/CanvasLayer/DebugLevelSwitch/HBoxContainer"]
+layout_mode = 2
+text = "Level 2"
+
+[node name="IconsPlayer2" type="MarginContainer" parent="HUD/CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -142.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/CanvasLayer/IconsPlayer2"]
+layout_mode = 2
+
+[node name="Hearts" type="GridContainer" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Heart1" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Heart2" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Heart3" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Heart4" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer/Hearts"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="Coins" type="GridContainer" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Coin" type="TextureRect" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer/Coins"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wynd1")
+
+[node name="CoinCount" type="Label" parent="HUD/CanvasLayer/IconsPlayer2/VBoxContainer/Coins"]
+layout_mode = 2
+text = "0"
+
+[node name="FpsCounter" parent="HUD/CanvasLayer" instance=ExtResource("4_qnph1")]
+visible = false
+offset_right = 76.0
+offset_bottom = 23.0

@@ -1,0 +1,192 @@
+[gd_scene load_steps=23 format=3 uid="uid://chefmwwgww3vq"]
+
+[ext_resource type="Texture2D" uid="uid://b0y88v7s01ak5" path="res://Sprites/Backgrounds/orange-trees/background.png" id="1_sa33y"]
+[ext_resource type="Script" path="res://Scripts/Menus/TitleScreen.cs" id="2_r7w1q"]
+[ext_resource type="Texture2D" uid="uid://cabt6jwe037i6" path="res://Sprites/Player/idle-1/adventurer-idle-00.png" id="4_l5otd"]
+[ext_resource type="Texture2D" uid="uid://ccgt0rbla82jv" path="res://Sprites/Player/die/adventurer-die-00.png" id="5_nrw3x"]
+[ext_resource type="Texture2D" uid="uid://bkh7wb2s30s6f" path="res://Sprites/Player/die/adventurer-die-01.png" id="6_mkmc7"]
+[ext_resource type="Texture2D" uid="uid://dvb78jysk63kw" path="res://Sprites/Player/die/adventurer-die-02.png" id="7_6xuy2"]
+[ext_resource type="Texture2D" uid="uid://cgjflmtpyhfxc" path="res://Sprites/Player/die/adventurer-die-03.png" id="8_qvwot"]
+[ext_resource type="Texture2D" uid="uid://6i65xmg6xnye" path="res://Sprites/Player/die/adventurer-die-04.png" id="9_nheh8"]
+[ext_resource type="Texture2D" uid="uid://b3n8qur001evi" path="res://Sprites/Player/die/adventurer-die-05.png" id="10_r6ejm"]
+[ext_resource type="Texture2D" uid="uid://8bb1x03plpdo" path="res://Sprites/Player/die/adventurer-die-06.png" id="11_i1p51"]
+[ext_resource type="Texture2D" uid="uid://c8ikw1vofsov8" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-00.png" id="12_1nc2d"]
+[ext_resource type="Texture2D" uid="uid://mqa4txcmlif3" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-01.png" id="13_nrip2"]
+[ext_resource type="Texture2D" uid="uid://dt2fqtp37ou28" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-02.png" id="14_6tnah"]
+[ext_resource type="Texture2D" uid="uid://ddrdbrmm7xwuv" path="res://Sprites/Player/sword-shiete/adventurer-swrd-shte-03.png" id="15_wdf2o"]
+[ext_resource type="Texture2D" uid="uid://ikwu8pmwsgfg" path="res://Sprites/Player/sword-draw/adventurer-swrd-drw-00.png" id="16_s8o5d"]
+[ext_resource type="Texture2D" uid="uid://be85glduf8fu6" path="res://Sprites/Player/sword-draw/adventurer-swrd-drw-01.png" id="17_liam6"]
+[ext_resource type="Texture2D" uid="uid://c5nsinajxc7tq" path="res://Sprites/Player/sword-draw/adventurer-swrd-drw-02.png" id="18_w715e"]
+[ext_resource type="Texture2D" uid="uid://bd4j0er7xnar8" path="res://Sprites/Player/sword-draw/adventurer-swrd-drw-03.png" id="19_bbyim"]
+[ext_resource type="PackedScene" uid="uid://bov1ru1y1sjt7" path="res://Scenes/Menus/FpsCounter.tscn" id="19_fxmax"]
+[ext_resource type="PackedScene" uid="uid://bbgyxw6w7imeh" path="res://Scenes/Menus/SettingsMenu.tscn" id="20_0hegi"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_4xklg"]
+frame_0/texture = ExtResource("4_l5otd")
+frame_0/duration = 0.12
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tbeb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_l5otd")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nrw3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mkmc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6xuy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qvwot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nheh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r6ejm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i1p51")
+}],
+"loop": false,
+"name": &"Quit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_1nc2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nrip2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6tnah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wdf2o")
+}],
+"loop": false,
+"name": &"sword_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_s8o5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_liam6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_w715e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bbyim")
+}],
+"loop": false,
+"name": &"sword_up",
+"speed": 5.0
+}]
+
+[node name="TitleScreen" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sa33y")
+script = ExtResource("2_r7w1q")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HorizontalContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VerticalContainer" type="VBoxContainer" parent="MarginContainer/HorizontalContainer"]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/HorizontalContainer/VerticalContainer"]
+layout_mode = 2
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HorizontalContainer/VerticalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Continue" type="Button" parent="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions"]
+layout_mode = 2
+text = "New Game"
+
+[node name="Load" type="Button" parent="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions"]
+layout_mode = 2
+text = "Load"
+
+[node name="Settings" type="Button" parent="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="MarginContainer/HorizontalContainer/VerticalContainer"]
+layout_mode = 2
+text = "Version 0.1
+Vacation Violation Studios"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HorizontalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HorizontalContainer/MarginContainer"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_4xklg")
+stretch_mode = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/HorizontalContainer/MarginContainer"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_1tbeb")
+animation = &"Idle"
+autoplay = "Idle"
+centered = false
+
+[node name="FpsCounter" parent="." instance=ExtResource("19_fxmax")]
+visible = false
+layout_mode = 0
+
+[node name="SettingsMenu" parent="." instance=ExtResource("20_0hegi")]
+visible = false
+layout_mode = 1
+
+[connection signal="mouse_entered" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Continue" to="." method="_on_continue_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Load" to="." method="_on_load_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Load" to="." method="_on_load_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Load" to="." method="_on_load_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HorizontalContainer/VerticalContainer/MenuOptions/Quit" to="." method="_on_quit_pressed"]
