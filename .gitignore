@@ -17,6 +17,3 @@ mono_crash.*.json
 # VS code specific ignores
 .vscode/
 .vs/
-
-*.cs linguist-language=C#
-*.gd linguist-language=GDScript
