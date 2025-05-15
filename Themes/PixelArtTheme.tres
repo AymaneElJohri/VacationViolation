@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://xc4cysix24me"]
+
+[ext_resource type="FontFile" uid="uid://d1w66uep24xn8" path="res://Fonts/prstartk.ttf" id="1_ib1m7"]
+
+
+[resource]
+default_font = ExtResource("1_ib1m7")
+default_font_size = 36
